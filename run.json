@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "check": "deno run --allow-net --allow-read --allow-write --unstable main.ts check",
+    "test": "deno test --unstable",
+    "bundle": "deno bundle --unstable mod.ts npmPublishCheck.js"
+  }
+}
