@@ -68,7 +68,9 @@ export default async () => {
     displayPackageList(triggerInfo);
     return;
   }
-  return displayVersion("NPM模块发包检测工具");
+  return displayVersion(
+    "NPM模块发包检测工具，使用 chenk 命令查询更新信息，更多命令请输入 --help 查看"
+  );
 };
 
 /**

@@ -1,24 +1,24 @@
 import { displayLog } from "../modules/utils.ts";
+import { VERSION } from "./version.ts";
 
 /**
  * 帮助说明
  */
 const HELP = `
- 仓库项目版本发包检测工具。
+ 仓库项目版本发包检测工具 ${VERSION}。
  
  USAGE:
-   packageCheck [options]
+    npm-publish-check <options>
  
  OPTIONS:
-   -h, --help                   帮助文档
-   -c, --config <FILE>          指定配置文件路径 (默认./config.ts)
-   -j, --jenkins <true|false>   是否触发Jenkins更新 (默认false)
-   -t, --tags <TAG,..>          检查指定的tag版本信息 用逗号分隔多个tag
-   -v, --verison                查看当前版本
-   --on-error                   显示详细错误信息
-   init                         生成默认的config.ts配置文件
-   --name                       配合init指定生成文件名
-   check                        按配置文件检查仓库中的包信息
+    check                        按配置文件检查仓库中的包信息
+    init [--name config.jsonc]   生成默认的config.ts配置文件，name参数为生成文件的名称
+    -c, --config <FILE>          指定配置文件路径 (默认./config.jsonc)
+    -j, --jenkins <true|false>   是否触发Jenkins更新 (默认false)
+    -t, --tags <TAG,..>          检查指定的tag版本信息 用逗号分隔多个tag
+    -v, --verison                查看当前版本
+    --on-error                   显示详细错误信息
+    -h, --help                   帮助文档
  `;
 
 /**

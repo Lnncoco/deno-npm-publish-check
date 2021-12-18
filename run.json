@@ -2,6 +2,11 @@
   "scripts": {
     "check": "deno run --allow-net --allow-read --allow-write --unstable main.ts check",
     "test": "deno test --unstable",
-    "bundle": "deno bundle --unstable mod.ts npmPublishCheck.js"
+    "bundle": "deno bundle --unstable mod.ts npmPublishCheck.js",
+    "build": "trex run build:win && trex run build:linux && trex run build:mac && trex run build:macarm",
+    "build:win": "deno compile --allow-net --allow-read --allow-write --unstable --target x86_64-pc-windows-msvc -o ./build/npm-publish-check-win main.ts",
+    "build:linux": "deno compile --allow-net --allow-read --allow-write --unstable --target x86_64-unknown-linux-gnu -o ./build/npm-publish-check-linux main.ts",
+    "build:mac": "deno compile --allow-net --allow-read --allow-write --unstable --target x86_64-apple-darwin -o ./build/npm-publish-check-mac main.ts",
+    "build:macarm": "deno compile --allow-net --allow-read --allow-write --unstable --target aarch64-apple-darwin -o ./build/npm-publish-check-macarm main.ts"
   }
 }
